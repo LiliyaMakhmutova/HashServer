@@ -14,6 +14,7 @@ Open \*.sln file and compile (build in release x64) the projects (client and ser
 
 ### Server configuration (and how to run .exe file)
 
+
 | -d --dir=<path>      | Path to the directory where files will be stored (future)                                                   |
 | -i --ip=<IP>         | IP address of server listener                                                                               |
 | -p --port=<uint>     | Port of server listener                                                                                     |
