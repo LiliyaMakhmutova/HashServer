@@ -13,15 +13,17 @@ Open \*.sln file and compile (build in release x64) the projects (client and ser
 - MS Visual Studio 2019 or above (with C++17 standard compiler)
 
 ### Server configuration (and how to run .exe file)
-
-| \-d \-\-dir=<path>      | Path to the directory where files will be stored \(future\)                                                   |
-| \-i \-\-ip=<IP>         | IP address of server listener                                                                                 |
-| \-p \-\-port=<uint>     | Port of server listener                                                                                       |
-| \-m \-\-maxtblsz=<uint> | Max size of hash table \(records\)                                                                            |
-| \-n \-\-ntables=<uint>  | Max number of available hash tables                                                                           |
-| \-w \-\-workers=<uint>  | Number of threads                                                                                             |
-| \-v \-\-verbose         | Flag that indicates that debug messages is printed to stdout \(stderr\), if not set server prints only errors |
-| \-h \-\-help            | Print help string                                                                                             |
+  
+| Command | Description |
+| --- | --- |
+| \-d \-\-dir=\<path\> | Path to the directory where files will be stored \(future\) |
+| \-i \-\-ip=\<IP\> | IP address of server listener |
+| \-p \-\-port=\<uint\> | Port of server listener |
+| \-m \-\-maxtblsz=\<uint\> | Max size of hash table \(records\) |
+| \-n \-\-ntables=\<uint\> | Max number of available hash tables |
+| \-w \-\-workers=\<uint\> | Number of threads |
+| \-v \-\-verbose | Flag that indicates that debug messages is printed to stdout \(stderr\), if not set server prints only errors |
+| \-h \-\-help | Print help string |
 
 Example of running the server on Windows:
 
@@ -42,10 +44,10 @@ The server accepts the following commands and outputs (each command starts with 
 | **command** | **description** | **output** |
 | --- | --- | --- |
 | addtable | user creates new hash table | Number of newly-created hash table |
-| remtable \&lt;no\&gt; | user deletes hash table by its number, only table owner is allowed to do it | Nothing (empty string) if succeeds or error string otherwise |
-| **gettable**  **\&lt;**** no ****\&gt;** | get full copy of a table by its number, only table owner is allowed to do it | &quot;key:value&quot; string if succeeds or error string otherwise |
-| **setval key=\&lt;uint\&gt; val=\&lt;string\&gt; table=\&lt;no\&gt; ttl=\&lt;sec\&gt;** | sets value by key in a table with expiration time, all users allowed | Nothing (empty string) if succeeds or error string otherwise |
-| **getval key=\&lt;uint\&gt; table=\&lt;no\&gt;** | gets value by key in table | &quot;ok key=key value=value table=table&quot; string if succeeds or error string otherwise |
+| remtable \<no\> | user deletes hash table by its number, only table owner is allowed to do it | Nothing (empty string) if succeeds or error string otherwise |
+| **gettable**  **\<**** no ****\>** | get full copy of a table by its number, only table owner is allowed to do it | &quot;key:value&quot; string if succeeds or error string otherwise |
+| **setval key=\<uint\> val=\<string\> table=\<no\> ttl=\<sec\>** | sets value by key in a table with expiration time, all users allowed | Nothing (empty string) if succeeds or error string otherwise |
+| **getval key=\<uint\> table=\<no\>** | gets value by key in table | &quot;ok key=key value=value table=table&quot; string if succeeds or error string otherwise |
 
 Example of command:
 
