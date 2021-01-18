@@ -45,7 +45,7 @@ The server accepts the following commands and outputs (each command starts with 
 | --- | --- | --- |
 | addtable | user creates new hash table | Number of newly-created hash table |
 | remtable \<no\> | user deletes hash table by its number, only table owner is allowed to do it | Nothing (empty string) if succeeds or error string otherwise |
-| **gettable**  **\<**** no ****\>** | get full copy of a table by its number, only table owner is allowed to do it | &quot;key:value&quot; string if succeeds or error string otherwise |
+| **gettable**  **\<****no****\>** | get full copy of a table by its number, only table owner is allowed to do it | &quot;key:value&quot; string if succeeds or error string otherwise |
 | **setval key=\<uint\> val=\<string\> table=\<no\> ttl=\<sec\>** | sets value by key in a table with expiration time, all users allowed | Nothing (empty string) if succeeds or error string otherwise |
 | **getval key=\<uint\> table=\<no\>** | gets value by key in table | &quot;ok key=key value=value table=table&quot; string if succeeds or error string otherwise |
 
