@@ -1,0 +1,90 @@
+\hypertarget{class_hash_server}{}\doxysection{Hash\+Server Class Reference}
+\label{class_hash_server}\index{HashServer@{HashServer}}
+
+
+Server that accepts and hadles user requests.  
+
+
+
+
+{\ttfamily \#include $<$Hash\+Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hash_server_a510d5634f6968e7a246b1df86fe16027}{Hash\+Server}} (boost\+::asio\+::io\+\_\+context \&io\+\_\+context, \mbox{\hyperlink{struct_hash_server_config}{Hash\+Server\+Config}} config)
+\item 
+void \mbox{\hyperlink{class_hash_server_a6ededac50c6dcb454599250162c4d98d}{handle\+\_\+accept}} (con\+\_\+handler\+::ptr\+\_\+to\+\_\+connection connection, const boost\+::system\+::error\+\_\+code \&err)
+\begin{DoxyCompactList}\small\item\em Method that invokes after connection accepted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server that accepts and hadles user requests. 
+
+\mbox{\hyperlink{class_hash_server}{Hash\+Server}} accepts asynchronically a user connection, creates \mbox{\hyperlink{classcon__handler}{con\+\_\+handler}} object. After handling in in \mbox{\hyperlink{classcon__handler}{con\+\_\+handler}} class, it invokes handle\+\_\+accept. This function that checks for errors and reconnects if they are found, otherwise continues accepting.
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Liliya Makhmutova 
+\end{DoxyParagraph}
+
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Revision}
+1.\+0 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2021/01/16 00\+:00\+:00 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hash_server_a510d5634f6968e7a246b1df86fe16027}\label{class_hash_server_a510d5634f6968e7a246b1df86fe16027}} 
+\index{HashServer@{HashServer}!HashServer@{HashServer}}
+\index{HashServer@{HashServer}!HashServer@{HashServer}}
+\doxysubsubsection{\texorpdfstring{HashServer()}{HashServer()}}
+{\footnotesize\ttfamily Hash\+Server\+::\+Hash\+Server (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{\mbox{\hyperlink{struct_hash_server_config}{Hash\+Server\+Config}}}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A constructor. Creates socket\+\_\+ from io\+\_\+context and read server configuration from config.
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & an io\+\_\+context\& argument \\
+\hline
+{\em config} & contains all configurations of a server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hash_server_a6ededac50c6dcb454599250162c4d98d}\label{class_hash_server_a6ededac50c6dcb454599250162c4d98d}} 
+\index{HashServer@{HashServer}!handle\_accept@{handle\_accept}}
+\index{handle\_accept@{handle\_accept}!HashServer@{HashServer}}
+\doxysubsubsection{\texorpdfstring{handle\_accept()}{handle\_accept()}}
+{\footnotesize\ttfamily void Hash\+Server\+::handle\+\_\+accept (\begin{DoxyParamCaption}\item[{con\+\_\+handler\+::ptr\+\_\+to\+\_\+connection}]{connection,  }\item[{const boost\+::system\+::error\+\_\+code \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method that invokes after connection accepted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & pointer to a connection \\
+\hline
+{\em err} & stores information on error\\
+\hline
+\end{DoxyParams}
+If no error occured (or no EOF in socket) it starts asynchroniously read the socket. Otherwise it starts accept new connection. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hash\+Server.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+\hypertarget{class_hash_map}{}\doxysection{Hash\+Map Class Reference}
+\label{class_hash_map}\index{HashMap@{HashMap}}
+
+
+Implements hash map.  
+
+
+
+
+{\ttfamily \#include $<$Hash\+Map.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hash_map_a3ae91705aa3ebfff22ce92e3c7797050}{Hash\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_hash_map_a5cf4616dc3e51924319434d0e9e0b205}{put}} (int key, std\+::string value, size\+\_\+t ttl)
+\begin{DoxyCompactList}\small\item\em Puts value by key with ttl to \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{class_hash_map_a4126eb7bb7963a553fcbdffc1b5ffde6}{get}} (int key)
+\begin{DoxyCompactList}\small\item\em Gets value by key from \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_map_a78b60f96d91763bdab54a315ba304780}{remove}} (int key)
+\begin{DoxyCompactList}\small\item\em Removes value by key from \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_hash_map_a7124cc8dc74bc74798124b32ea17d715}{get\+\_\+table}} ()
+\begin{DoxyCompactList}\small\item\em Method that gets all contents of a table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_hash_map_a9f6d61ba738b4bf1778fdcc145e4287e}\label{class_hash_map_a9f6d61ba738b4bf1778fdcc145e4287e}} 
+void \mbox{\hyperlink{class_hash_map_a9f6d61ba738b4bf1778fdcc145e4287e}{free\+\_\+hash\+\_\+map}} ()
+\begin{DoxyCompactList}\small\item\em Clears hash map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements hash map. 
+
+\mbox{\hyperlink{class_hash_map}{Hash\+Map}} class has hash function that maps key values to bins (positions in vector). Each element of the vector if a linked list, and elements are pushed back it the list.
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Liliya Makhmutova 
+\end{DoxyParagraph}
+
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Revision}
+1.\+0 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2021/01/16 00\+:00\+:00 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hash_map_a3ae91705aa3ebfff22ce92e3c7797050}\label{class_hash_map_a3ae91705aa3ebfff22ce92e3c7797050}} 
+\index{HashMap@{HashMap}!HashMap@{HashMap}}
+\index{HashMap@{HashMap}!HashMap@{HashMap}}
+\doxysubsubsection{\texorpdfstring{HashMap()}{HashMap()}}
+{\footnotesize\ttfamily Hash\+Map\+::\+Hash\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A constructor. Resizes the vector to some constant basic size BASIC\+\_\+\+SIZE. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hash_map_a4126eb7bb7963a553fcbdffc1b5ffde6}\label{class_hash_map_a4126eb7bb7963a553fcbdffc1b5ffde6}} 
+\index{HashMap@{HashMap}!get@{get}}
+\index{get@{get}!HashMap@{HashMap}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::string $>$ Hash\+Map\+::get (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Gets value by key from \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & to identify a record.\\
+\hline
+\end{DoxyParams}
+This method checks whether such key exists. If yes, it checks that it is not expired and returns its value. Otherwise it returns nullopt.
+
+\begin{DoxyReturn}{Returns}
+optional$<$string$>$ object that is not nullopt when record exists and valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_map_a7124cc8dc74bc74798124b32ea17d715}\label{class_hash_map_a7124cc8dc74bc74798124b32ea17d715}} 
+\index{HashMap@{HashMap}!get\_table@{get\_table}}
+\index{get\_table@{get\_table}!HashMap@{HashMap}}
+\doxysubsubsection{\texorpdfstring{get\_table()}{get\_table()}}
+{\footnotesize\ttfamily std\+::string Hash\+Map\+::get\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that gets all contents of a table. 
+
+This method iterates over all vector elements and inside each list. $\ast$
+
+\begin{DoxyReturn}{Returns}
+Outputs string in the format\+: \char`\"{}key1\+:value1\textbackslash{}nkey2\+:value2...\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_map_a5cf4616dc3e51924319434d0e9e0b205}\label{class_hash_map_a5cf4616dc3e51924319434d0e9e0b205}} 
+\index{HashMap@{HashMap}!put@{put}}
+\index{put@{put}!HashMap@{HashMap}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void Hash\+Map\+::put (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{std\+::string}]{value,  }\item[{size\+\_\+t}]{ttl }\end{DoxyParamCaption})}
+
+
+
+Puts value by key with ttl to \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & to identify a record. \\
+\hline
+{\em value} & to store value \\
+\hline
+{\em ttl} & to store expiration time\\
+\hline
+\end{DoxyParams}
+This method checks whether such key exists. If yes, it looks for it in a\mbox{[}h(key)\mbox{]} list and modifies its value. Otherwise adds to a\mbox{[}h(key)\mbox{]} list new record. \mbox{\Hypertarget{class_hash_map_a78b60f96d91763bdab54a315ba304780}\label{class_hash_map_a78b60f96d91763bdab54a315ba304780}} 
+\index{HashMap@{HashMap}!remove@{remove}}
+\index{remove@{remove}!HashMap@{HashMap}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Hash\+Map\+::remove (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Removes value by key from \mbox{\hyperlink{class_hash_map}{Hash\+Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & to identify a record.\\
+\hline
+\end{DoxyParams}
+This method looks for it in a\mbox{[}h(key)\mbox{]} list erases it if found. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hash\+Map.\+h\item 
+Hash\+Map.\+cpp\end{DoxyCompactItemize}

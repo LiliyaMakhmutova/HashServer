@@ -1,0 +1,419 @@
+\hypertarget{classcon__handler}{}\doxysection{con\+\_\+handler Class Reference}
+\label{classcon__handler}\index{con\_handler@{con\_handler}}
+
+
+Handles each user connection, reads socket request and writes response to the socket.  
+
+
+
+
+{\ttfamily \#include $<$Hash\+Server.\+h$>$}
+
+Inheritance diagram for con\+\_\+handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcon__handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcon__handler_a27d96e20815175e76ab2c8d555f7d11d}\label{classcon__handler_a27d96e20815175e76ab2c8d555f7d11d}} 
+using {\bfseries ptr\+\_\+to\+\_\+connection} = boost\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classcon__handler}{con\+\_\+handler}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcon__handler_ac1ea52cefcf261056da73b1aca241849}{con\+\_\+handler}} (boost\+::asio\+::io\+\_\+context \&io\+\_\+context)
+\item 
+\mbox{\Hypertarget{classcon__handler_a4846a580c99be5380261d11d4e958fbe}\label{classcon__handler_a4846a580c99be5380261d11d4e958fbe}} 
+tcp\+::socket \& \mbox{\hyperlink{classcon__handler_a4846a580c99be5380261d11d4e958fbe}{socket}} ()
+\begin{DoxyCompactList}\small\item\em socket getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcon__handler_a02d6691e226a75525a2ac83062b5c7f7}\label{classcon__handler_a02d6691e226a75525a2ac83062b5c7f7}} 
+void \mbox{\hyperlink{classcon__handler_a02d6691e226a75525a2ac83062b5c7f7}{start}} ()
+\begin{DoxyCompactList}\small\item\em starts anync\+\_\+read of the socket \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcon__handler_a3b8e9edfc8fed79fcba0242a58b54bc2}{handle\+\_\+read}} (const boost\+::system\+::error\+\_\+code \&err, size\+\_\+t bytes\+\_\+transferred)
+\begin{DoxyCompactList}\small\item\em Method that invokes after user\textquotesingle{}s response has been read. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcon__handler_a10169d7b3588adb849d7e7c02c46375a}{handle\+\_\+write}} (const boost\+::system\+::error\+\_\+code \&err, size\+\_\+t bytes\+\_\+transferred)
+\begin{DoxyCompactList}\small\item\em Method that invokes after user\textquotesingle{}s response has been written. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_aad0f6482e8bbfae0bcac1df0ae8ad5da}{add\+\_\+table}} (std\+::string username)
+\begin{DoxyCompactList}\small\item\em Method that adds table with username to tables. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_a7f855d35d2572285866d756c34d2a466}{get\+\_\+table}} (size\+\_\+t table\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Method that gets all contents of a table with table\+\_\+num number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcon__handler_a61c7807a609647c8630b6cb491c10edd}{set\+\_\+val}} (size\+\_\+t table\+\_\+num, int key, std\+::string val, time\+\_\+t ttl)
+\begin{DoxyCompactList}\small\item\em Method that sets value in table by key with ttl. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classcon__handler_a511808245f74a1a409ceb3b391a3e054}{get\+\_\+val}} (size\+\_\+t table\+\_\+num, int key)
+\begin{DoxyCompactList}\small\item\em Method that gets value in table by key. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_a45f5a0d706fa4ea3599528f01616ef45}{remove\+\_\+table}} (size\+\_\+t table\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Method that removes table by table\+\_\+num. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_ad2218b5ef26effe4241bb5f09e531fda}{parse\+\_\+command\+\_\+str}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Method that parses user request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcon__handler_a5a607ecb2be335f0361b2f8fa5b8ec9d}{is\+\_\+valid\+\_\+table}} (size\+\_\+t table\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Method that checks whether table is valid. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_a986e9986385b4e22fc1307f725c110c6}{get\+\_\+table\+\_\+error}} (size\+\_\+t table\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Method that returns table error string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_a818a8110b584e2d2dc469f2c9a9fc0cb}{get\+\_\+key\+\_\+error}} (size\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Method that returns key error string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcon__handler_a510db5adf3008a2763d9bca797e0c7d9}{get\+\_\+okey}} (size\+\_\+t key, std\+::string value, size\+\_\+t table)
+\begin{DoxyCompactList}\small\item\em Method that returns ok string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ptr\+\_\+to\+\_\+connection \mbox{\hyperlink{classcon__handler_a34ce5f89b2f5005381f59379dc993b2d}{create}} (boost\+::asio\+::io\+\_\+context \&io\+\_\+context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles each user connection, reads socket request and writes response to the socket. 
+
+\mbox{\hyperlink{class_hash_server}{Hash\+Server}} accepts a user connection, creates \mbox{\hyperlink{classcon__handler}{con\+\_\+handler}} object. This object asynchronically reads a socket, then if successful, parses request and asynchronically writes response to the socket. If unsuccessful, prints error to the stderr. Prints dubug messages is VERBOSE mode is on.
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Author}
+Liliya Makhmutova 
+\end{DoxyParagraph}
+
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Revision}
+1.\+0 
+\end{DoxyParagraph}
+
+
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2021/01/16 00\+:00\+:00 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcon__handler_ac1ea52cefcf261056da73b1aca241849}\label{classcon__handler_ac1ea52cefcf261056da73b1aca241849}} 
+\index{con\_handler@{con\_handler}!con\_handler@{con\_handler}}
+\index{con\_handler@{con\_handler}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{con\_handler()}{con\_handler()}}
+{\footnotesize\ttfamily con\+\_\+handler\+::con\+\_\+handler (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io\+\_\+context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+A constructor. Creates socket\+\_\+ from io\+\_\+context 
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & an io\+\_\+context\& argument. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcon__handler_aad0f6482e8bbfae0bcac1df0ae8ad5da}\label{classcon__handler_aad0f6482e8bbfae0bcac1df0ae8ad5da}} 
+\index{con\_handler@{con\_handler}!add\_table@{add\_table}}
+\index{add\_table@{add\_table}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{add\_table()}{add\_table()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::add\+\_\+table (\begin{DoxyParamCaption}\item[{std\+::string}]{username }\end{DoxyParamCaption})}
+
+
+
+Method that adds table with username to tables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & string contains username\\
+\hline
+\end{DoxyParams}
+This method adds new table with empty hashmap, username. Each table has a unique number (just like id field in database) that equals to its position in vector of tables. Increases size by 1.
+
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a34ce5f89b2f5005381f59379dc993b2d}\label{classcon__handler_a34ce5f89b2f5005381f59379dc993b2d}} 
+\index{con\_handler@{con\_handler}!create@{create}}
+\index{create@{create}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static ptr\+\_\+to\+\_\+connection con\+\_\+handler\+::create (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io\+\_\+context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+A static member function that creates pointer to the connection 
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & an io\+\_\+context\& argument. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcon__handler_a818a8110b584e2d2dc469f2c9a9fc0cb}\label{classcon__handler_a818a8110b584e2d2dc469f2c9a9fc0cb}} 
+\index{con\_handler@{con\_handler}!get\_key\_error@{get\_key\_error}}
+\index{get\_key\_error@{get\_key\_error}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_key\_error()}{get\_key\_error()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::get\+\_\+key\+\_\+error (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Method that returns key error string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & value of key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error string
+\end{DoxyReturn}
+Returns \char`\"{}error key=table\+\_\+num\char`\"{} string.
+
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a510db5adf3008a2763d9bca797e0c7d9}\label{classcon__handler_a510db5adf3008a2763d9bca797e0c7d9}} 
+\index{con\_handler@{con\_handler}!get\_okey@{get\_okey}}
+\index{get\_okey@{get\_okey}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_okey()}{get\_okey()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::get\+\_\+okey (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{key,  }\item[{std\+::string}]{value,  }\item[{size\+\_\+t}]{table }\end{DoxyParamCaption})}
+
+
+
+Method that returns ok string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & value of key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ok string
+\end{DoxyReturn}
+Returns \char`\"{}ok key=key value=value table=table\char`\"{} string.
+
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a7f855d35d2572285866d756c34d2a466}\label{classcon__handler_a7f855d35d2572285866d756c34d2a466}} 
+\index{con\_handler@{con\_handler}!get\_table@{get\_table}}
+\index{get\_table@{get\_table}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_table()}{get\_table()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::get\+\_\+table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Method that gets all contents of a table with table\+\_\+num number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number\\
+\hline
+\end{DoxyParams}
+This method gets all contents of a table with table\+\_\+num number.
+
+\begin{DoxyReturn}{Returns}
+Outputs string in the format\+: \char`\"{}key1\+:value1\textbackslash{}nkey2\+:value2...\char`\"{}
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a986e9986385b4e22fc1307f725c110c6}\label{classcon__handler_a986e9986385b4e22fc1307f725c110c6}} 
+\index{con\_handler@{con\_handler}!get\_table\_error@{get\_table\_error}}
+\index{get\_table\_error@{get\_table\_error}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_table\_error()}{get\_table\_error()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::get\+\_\+table\+\_\+error (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Method that returns table error string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error string
+\end{DoxyReturn}
+Returns \char`\"{}error table=table\+\_\+num\char`\"{} string.
+
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a511808245f74a1a409ceb3b391a3e054}\label{classcon__handler_a511808245f74a1a409ceb3b391a3e054}} 
+\index{con\_handler@{con\_handler}!get\_val@{get\_val}}
+\index{get\_val@{get\_val}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_val()}{get\_val()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::string $>$ con\+\_\+handler\+::get\+\_\+val (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num,  }\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Method that gets value in table by key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number \\
+\hline
+{\em key} & in \mbox{\hyperlink{class_hash_map}{Hash\+Map}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+optional$<$string$>$ object that is not nullopt if value in the table exists and alive.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a3b8e9edfc8fed79fcba0242a58b54bc2}\label{classcon__handler_a3b8e9edfc8fed79fcba0242a58b54bc2}} 
+\index{con\_handler@{con\_handler}!handle\_read@{handle\_read}}
+\index{handle\_read@{handle\_read}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{handle\_read()}{handle\_read()}}
+{\footnotesize\ttfamily void con\+\_\+handler\+::handle\+\_\+read (\begin{DoxyParamCaption}\item[{const boost\+::system\+::error\+\_\+code \&}]{err,  }\item[{size\+\_\+t}]{bytes\+\_\+transferred }\end{DoxyParamCaption})}
+
+
+
+Method that invokes after user\textquotesingle{}s response has been read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & contains all information on error. \\
+\hline
+{\em bytes\+\_\+transferred} & contains number of bytes read\\
+\hline
+\end{DoxyParams}
+This method checks whether no error occured. If yes, it sends response asychronically. If no, it prints error to stderr and closes the socket.
+
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a10169d7b3588adb849d7e7c02c46375a}\label{classcon__handler_a10169d7b3588adb849d7e7c02c46375a}} 
+\index{con\_handler@{con\_handler}!handle\_write@{handle\_write}}
+\index{handle\_write@{handle\_write}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{handle\_write()}{handle\_write()}}
+{\footnotesize\ttfamily void con\+\_\+handler\+::handle\+\_\+write (\begin{DoxyParamCaption}\item[{const boost\+::system\+::error\+\_\+code \&}]{err,  }\item[{size\+\_\+t}]{bytes\+\_\+transferred }\end{DoxyParamCaption})}
+
+
+
+Method that invokes after user\textquotesingle{}s response has been written. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & contains all information on error. \\
+\hline
+{\em bytes\+\_\+transferred} & contains number of bytes read\\
+\hline
+\end{DoxyParams}
+This method checks whether no error occured. If no, it prints error to stderr and closes the socket.
+
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a5a607ecb2be335f0361b2f8fa5b8ec9d}\label{classcon__handler_a5a607ecb2be335f0361b2f8fa5b8ec9d}} 
+\index{con\_handler@{con\_handler}!is\_valid\_table@{is\_valid\_table}}
+\index{is\_valid\_table@{is\_valid\_table}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_table()}{is\_valid\_table()}}
+{\footnotesize\ttfamily bool con\+\_\+handler\+::is\+\_\+valid\+\_\+table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Method that checks whether table is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean value that indicates validity of a table
+\end{DoxyReturn}
+\mbox{\hyperlink{struct_table}{Table}} is valid when its number exists and it has not been removed.
+
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_ad2218b5ef26effe4241bb5f09e531fda}\label{classcon__handler_ad2218b5ef26effe4241bb5f09e531fda}} 
+\index{con\_handler@{con\_handler}!parse\_command\_str@{parse\_command\_str}}
+\index{parse\_command\_str@{parse\_command\_str}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{parse\_command\_str()}{parse\_command\_str()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::parse\+\_\+command\+\_\+str (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+Method that parses user request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string to send to the user.
+\end{DoxyReturn}
+Checks validity of response. Response could be\+: addtable, remtable, gettable, setval, getval. If the response cannot be parsed, the function prints erroe to stderr.
+
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard (it calls other functions that cause lock) 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a45f5a0d706fa4ea3599528f01616ef45}\label{classcon__handler_a45f5a0d706fa4ea3599528f01616ef45}} 
+\index{con\_handler@{con\_handler}!remove\_table@{remove\_table}}
+\index{remove\_table@{remove\_table}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{remove\_table()}{remove\_table()}}
+{\footnotesize\ttfamily std\+::string con\+\_\+handler\+::remove\+\_\+table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Method that removes table by table\+\_\+num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+empty string to send to the user.
+\end{DoxyReturn}
+Make table invalid, clears \mbox{\hyperlink{class_hash_map}{Hash\+Map}} and descreases size by 1.
+
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcon__handler_a61c7807a609647c8630b6cb491c10edd}\label{classcon__handler_a61c7807a609647c8630b6cb491c10edd}} 
+\index{con\_handler@{con\_handler}!set\_val@{set\_val}}
+\index{set\_val@{set\_val}!con\_handler@{con\_handler}}
+\doxysubsubsection{\texorpdfstring{set\_val()}{set\_val()}}
+{\footnotesize\ttfamily void con\+\_\+handler\+::set\+\_\+val (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+num,  }\item[{int}]{key,  }\item[{std\+::string}]{val,  }\item[{time\+\_\+t}]{ttl }\end{DoxyParamCaption})}
+
+
+
+Method that sets value in table by key with ttl. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+num} & table unique number \\
+\hline
+{\em key} & in \mbox{\hyperlink{class_hash_map}{Hash\+Map}} \\
+\hline
+{\em val} & value in \mbox{\hyperlink{class_hash_map}{Hash\+Map}} \\
+\hline
+{\em ttl} & time in seconds that this value exists in the table\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+this finction uses mutex lock\+\_\+guard 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Is VERBOSE flag is set it prints debug messages to stderr. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hash\+Server.\+h\item 
+Hash\+Server.\+cpp\end{DoxyCompactItemize}
