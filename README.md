@@ -16,7 +16,7 @@ Open \*.sln file and compile (build in release x64) the projects (client and ser
 
 | **-**** d **** -- ****dir** =\&lt;path\&gt; | Path to the directory where files will be stored (future) |
 | --- | --- |
-| **-**** i ****--ip** =\&lt;IP\&gt; | IP address of server listener |
+| -i --ip =<IP>; | IP address of server listener |
 | **-p**  **--**** port=**\&lt;uint\&gt; | Port of server listener |
 | **-m**  **--**** maxtblsz=**\&lt;uint\&gt; | Max size of hash table (records) |
 | **-n**  **--**** ntables=**\&lt;uint\&gt; | Max number of available hash tables |
