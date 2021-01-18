@@ -78,4 +78,4 @@ This project is licensed under the MIT License
 
 ## Author
 
-Liliya Makhmutova, liliyamakhmutova17@gmail.com
+Liliya Makhmutova, liliyamakhmutova17@gmail.com 
