@@ -1,0 +1,5 @@
+﻿  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1182 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  HashClient.vcxproj -> C:\Users\Lily\source\repos\HashClient\x64\Release\HashClient.exe
