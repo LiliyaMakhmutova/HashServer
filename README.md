@@ -14,15 +14,14 @@ Open \*.sln file and compile (build in release x64) the projects (client and ser
 
 ### Server configuration (and how to run .exe file)
 
-
-| -d --dir=<path>      | Path to the directory where files will be stored (future)                                                   |
-| -i --ip=<IP>         | IP address of server listener                                                                               |
-| -p --port=<uint>     | Port of server listener                                                                                     |
-| -m --maxtblsz=<uint> | Max size of hash table (records)                                                                            |
-| -n --ntables=<uint>  | Max number of available hash tables                                                                         |
-| -w --workers=<uint>  | Number of threads                                                                                           |
-| -v --verbose         | Flag that indicates that debug messages is printed to stdout (stderr), if not set server prints only errors |
-| -h --help            | Print help string                                                                                           |
+| \-d \-\-dir=<path>      | Path to the directory where files will be stored \(future\)                                                   |
+| \-i \-\-ip=<IP>         | IP address of server listener                                                                                 |
+| \-p \-\-port=<uint>     | Port of server listener                                                                                       |
+| \-m \-\-maxtblsz=<uint> | Max size of hash table \(records\)                                                                            |
+| \-n \-\-ntables=<uint>  | Max number of available hash tables                                                                           |
+| \-w \-\-workers=<uint>  | Number of threads                                                                                             |
+| \-v \-\-verbose         | Flag that indicates that debug messages is printed to stdout \(stderr\), if not set server prints only errors |
+| \-h \-\-help            | Print help string                                                                                             |
 
 Example of running the server on Windows:
 
