@@ -35,18 +35,18 @@ void parse_console_parameters(int argc, char **argv, HashServerConfig &config);
 
 
 int main(int argc, char **argv) {
-  /*HashServerConfig config;
+  HashServerConfig config;
   parse_console_parameters(argc, argv, config);
 
-  std::cout << config.dir << " " << config.ip << " " << config.maxtblsz << " "
+  /*std::cout << config.dir << " " << config.ip << " " << config.maxtblsz << " "
             << config.ntables << " " << config.port << " " << config.verbose
-            << " " << config.workers << endl;
+            << " " << config.workers << endl;*/
             
-  */
-  HashServerConfig config; // all console config parameters are stored here
+  
+  /*HashServerConfig config; // all console config parameters are stored here
   config.ip = "127.0.0.1";
   config.port = 1234;
-  config.workers = 8;
+  config.workers = 8;*/
   if (!help_opt) {
     try {
       boost::thread_group threads_; // thread_pool
