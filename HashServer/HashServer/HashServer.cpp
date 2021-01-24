@@ -117,7 +117,7 @@ std::string con_handler::parse_command_str(std::string str) {
   }
   try {
     if (token == "addtable") {
-      if (ntables == size) {
+      if (ntables <= size) {
         if (VERBOSE) {
           cout << "Table limit exceeded." << endl;
         }
@@ -207,8 +207,10 @@ std::string con_handler::parse_command_str(std::string str) {
         cout << "Unknown command" << endl;
       }
     }
+    return "";
   } catch (std::exception& err) {
     cout << "Request parsing failed: " << err.what() << endl;
+    return "";
   }
   return "";
 }
